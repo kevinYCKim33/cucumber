@@ -1,9 +1,36 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
+import LoadingMessage from '../components/LoadingMessage';
+
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      searchTerm: '',
+      loading: false,
+    }
+  }
+
+  handleOnChange = (event) => {
+    this.setState({
+      searchTerm: event.target.value,
+      loading: true
+    }
+  )}
+
   render() {
+    const { searchTerm, loading } = this.state;
+
+    let displayMoviesList = null;
+
+    if (loading) {
+      displayMoviesList = (
+        <LoadingMessage />
+      );
+    }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -13,6 +40,8 @@ class App extends Component {
               <input
                 placeholder="Search movies by title..."
                 type="text"
+                value={searchTerm}
+                onChange={this.handleOnChange}
               />
             </form>
           </div>
@@ -20,7 +49,7 @@ class App extends Component {
 
         <div className="App-body">
           <div className="filler">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            {displayMoviesList}
           </div>
         </div>
 

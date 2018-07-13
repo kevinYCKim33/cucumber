@@ -55,6 +55,4 @@ footer a:hover {
   font-family: 'Libre Franklin', sans-serif; }
 
 .filler {
-  display: flex;
-  justify-content: center;
   max-width: 767px; }
