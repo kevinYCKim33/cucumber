@@ -1,24 +1,23 @@
-.App {
-  text-align: center; }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px; }
-
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin|Titan+One");
 .App-header {
   background-color: #83aa3e;
-  height: 150px;
+  text-align: center;
+  height: 80px;
   padding: 20px;
-  color: white; }
+  color: black; }
+
+.App-header h1 {
+  font-size: 24px;
+  font-family: 'Titan One', cursive; }
 
 .App-title {
-  font-size: 1.5em; }
+  margin-top: 0px;
+  margin-bottom: 10px; }
 
-.App-intro {
-  font-size: large; }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
+.App-header input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  width: 250px;
+  border: 2px solid black;
+  border-radius: 4px; }
