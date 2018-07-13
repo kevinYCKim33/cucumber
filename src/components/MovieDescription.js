@@ -5,7 +5,33 @@ class MovieDescription extends Component {
     super();
     this.state = {
       showMore: false,
+      cutoffPoint: null,
     }
+  }
+
+  updateWordCutOff = () => {
+    if (window.innerWidth <= 450) {
+      this.setState({
+        cutoffPoint: 100
+      });
+    } else if (window.innerWidth <= 650) {
+      this.setState({
+        cutoffPoint: 250,
+      });
+    } else {
+      this.setState({
+        cutoffPoint: 350,
+      });
+    }
+  }
+
+  componentDidMount = () => {
+    this.updateWordCutOff();
+    window.addEventListener("resize", this.updateWordCutOff);
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.updateWordCutOff);
   }
 
   toggleDescription = (event) => {
@@ -19,15 +45,16 @@ class MovieDescription extends Component {
   }
 
   render() {
+    const { cutoffPoint } = this.state;
     let synopsis = this.props.description;
     let showMoreOrLess;
 
-    if (synopsis && synopsis.length > 100) {
+    if (synopsis && synopsis.length > cutoffPoint) {
       if (this.state.showMore) {
         showMoreOrLess = "Show less";
       } else {
         showMoreOrLess = "Show more";
-        synopsis = synopsis.slice(0, 100) + "...";
+        synopsis = synopsis.slice(0, cutoffPoint) + "...";
       }
     }
 
