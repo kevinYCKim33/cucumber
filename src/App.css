@@ -67,6 +67,13 @@ footer a:hover {
 .filler {
   max-width: 767px; }
 
+.movie {
+  display: flex;
+  margin-bottom: 20px; }
+
+.poster-holder {
+  margin-right: 15px; }
+
 @media all and (max-width: 767px) {
   .App-body h1 {
     font-size: 16px; } }
