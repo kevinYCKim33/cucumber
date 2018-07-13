@@ -63,6 +63,21 @@ class App extends Component {
       });
   }
 
+  loadMoreMovies = (event) => {
+    event.preventDefault();
+    const query = encodeURIComponent(this.state.searchTerm);
+    let currentPage = this.state.page;
+    let requestedPage = currentPage + 1;
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}&page=${requestedPage}`)
+      .then(response => response.json())
+      .then(queryResults => {
+        this.setState({
+          page: queryResults.page,
+          moviesResults: this.state.moviesResults.concat(queryResults.results),
+        });
+      });
+  }
+
   render() {
     const { searchTerm, loading, page, totalResults, totalPages, moviesResults } = this.state;
 
@@ -80,6 +95,7 @@ class App extends Component {
           totalResults={totalResults}
           totalPages={totalPages}
           moviesResults={moviesResults}
+          loadMoreMovies={this.loadMoreMovies}
         />
       );
     } else if (moviesResults && moviesResults.length === 0) {

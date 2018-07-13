@@ -25,18 +25,16 @@ footer {
   height: 70px;
   width: 100%;
   overflow:hidden;
-}
-
-footer a {
-  color: $light-gray;
-  font-size: 40px;
-  text-decoration: none;
-}
-
-footer a:hover {
-  cursor: pointer;
-  text-decoration: none;
-  color: $milk-white;
+  a {
+    color: $light-gray;
+    font-size: 40px;
+    text-decoration: none;
+  }
+  a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: $milk-white;
+  }
 }
 
 .App-header {
@@ -45,25 +43,23 @@ footer a:hover {
   height: 80px;
   padding: 20px;
   color: black;
-}
-
-.App-header h1 {
-  font-size: 24px;
-  font-family: 'Titan One', cursive;
+  h1 {
+    font-size: 24px;
+    font-family: 'Titan One', cursive;
+  }
+  input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 4px;
+  }
 }
 
 .App-title {
   margin-top: 0px;
   margin-bottom: 10px;
-}
-
-.App-header input[type=text] {
-  padding: 6px;
-  margin-top: 8px;
-  font-size: 17px;
-  width: 250px;
-  border: 2px solid black;
-  border-radius: 4px;
 }
 
 .App-body {
@@ -88,6 +84,20 @@ footer a:hover {
 
 .filler {
   max-width: 767px;
+}
+
+.search-results {
+  margin-bottom: 100px;
+}
+
+// https://stackoverflow.com/questions/1367409/how-to-make-button-look-like-a-link
+.no-style-button {
+  background:none!important;
+  color:gray;
+  border:none;
+  padding:0!important;
+  font-size: 13px;
+  cursor: pointer;
 }
 
 .movie {

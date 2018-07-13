@@ -1,7 +1,8 @@
 import React from 'react';
 import Movie from './Movie';
+import MoreMoviesButton from './MoreMoviesButton';
 
-const MoviesList = ({ moviesResults, id, searchTerm, totalResults, page, totalPages }) => {
+const MoviesList = ({ moviesResults, id, searchTerm, totalResults, page, totalPages, loadMoreMovies }) => {
 
   const movies = moviesResults.map((movie) => {
     return (
@@ -26,6 +27,11 @@ const MoviesList = ({ moviesResults, id, searchTerm, totalResults, page, totalPa
 
       <div>
         {movies}
+        {page < totalPages &&
+          <MoreMoviesButton
+            loadMoreMovies={loadMoreMovies}
+          />
+        }
       </div>
     </div>
   )
