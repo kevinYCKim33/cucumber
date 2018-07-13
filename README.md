@@ -4,6 +4,8 @@ Curology Cucumbers is a React SPA that lets you browse through [The Movie Databa
 
 Check out the working demo [here](https://curologycucumbers.netlify.com/).
 
+![Cucumbers](https://i.imgur.com/Y903yi9.png)
+
 ## Installation
 
 ### Thing(s) you will need:
@@ -16,7 +18,6 @@ Fork and clone the repo down to a local directory, `cd` into it, then run in the
 
 ```
 npm install
-
 ```
 
 ## Usage
@@ -72,15 +73,15 @@ if (movie.overview) {
 }
 ```
 
-regardless, these get pretty tedious.
+Nevertheless, these got pretty tedious.
 
 ### Adding dynamic summary length
 
-I really wanted to focus on creating an app that looks good from a mobile device first, so I first coded up my `<MovieDescription />` component to cut off the summary with a "Show more" button if its length was greater than 100 characters.
+I really wanted to focus on creating an app that is mobile-friendly first, so I initially coded up my `<MovieDescription />` component to cut off the summary with a "Show more" button if the summary length was greater than 100 characters.
 
-However, this looked rather awkward on desktop when the window width was medium to large size. Therefore, I tried to implement a dynamic cutoff point depending on window size.
+However, this looked rather awkward on desktop when the window width was medium to large size. Therefore, I tried to implement a dynamic cutoff point dependent on window size.
 
-This ended up being a bit tricker than I had thought.  As React is all about *reacting* to changes, I thought I could just slip this line of code just under the `render()` function in my `<MovieDescription />`
+This ended up being a bit tricker than I had anticipated.  As React is all about *reacting* to changes, I thought I could just slip this line of code just under the `render()` function in my `<MovieDescription />`
 
 ```
 render() {
@@ -148,7 +149,7 @@ Right now when the user gets to the bottom, there is a modest 'Show More Movies'
 It would be nice to connect to a backend to store a user's favorite movie.
 
 ### Movie Show Page
-Click on a movie, and we get routed to its show page, displaying additional information such as runtime, genre(s), and a bigger poster. 
+Click on a movie, and we get routed to its show page, displaying additional information such as runtime, genre(s), and a bigger poster.
 
 
 ## Development
