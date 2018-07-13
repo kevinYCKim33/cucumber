@@ -5,31 +5,7 @@ class MovieDescription extends Component {
     super();
     this.state = {
       showMore: false,
-      cutoffPoint: null,
     }
-  }
-
-  updateWordCutOff = () => {
-    let cutoffPoint;
-    if (window.innerWidth <= 450) {
-      cutoffPoint = 100;
-    } else if (window.innerWidth <= 650) {
-      cutoffPoint = 250;
-    } else {
-      cutoffPoint = 350;
-    }
-    this.setState({
-      cutoffPoint
-    });
-  }
-
-  componentDidMount = () => {
-    this.updateWordCutOff();
-    window.addEventListener("resize", this.updateWordCutOff);
-  }
-
-  componentWillUnmount = () => {
-    window.removeEventListener("resize", this.updateWordCutOff);
   }
 
   toggleDescription = (event) => {
@@ -43,7 +19,7 @@ class MovieDescription extends Component {
   }
 
   render() {
-    const { cutoffPoint } = this.state;
+    const { cutoffPoint } = this.props;
     let synopsis = this.props.description;
     let showMoreOrLess;
 

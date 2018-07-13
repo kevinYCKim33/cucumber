@@ -3,7 +3,7 @@ import defaultMoviePic from '../defaultMoviePic.png';
 import MovieDescription from './MovieDescription';
 
 
-const Movie = ({movie}) => {
+const Movie = ({movie, cutoffPoint}) => {
 
   let imageLink;
   if (movie.poster_path) {
@@ -39,6 +39,7 @@ const Movie = ({movie}) => {
         </div>
         <MovieDescription
           description={overview}
+          cutoffPoint={cutoffPoint}
         />
       </div>
     </div>

@@ -21,8 +21,32 @@ class App extends Component {
       totalPages: null,
       moviesResults: null,
       totalResults: null,
+      cutoffPoint: null,
     };
     this.autocompleteSearchDebounced = debounce(500, this.autocompleteSearch);
+  }
+
+  updateWordCutOff = () => {
+    let cutoffPoint;
+    if (window.innerWidth <= 450) {
+      cutoffPoint = 100;
+    } else if (window.innerWidth <= 650) {
+      cutoffPoint = 250;
+    } else {
+      cutoffPoint = 350;
+    }
+    this.setState({
+      cutoffPoint
+    });
+  }
+
+  componentDidMount = () => {
+    this.updateWordCutOff();
+    window.addEventListener("resize", this.updateWordCutOff);
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.updateWordCutOff);
   }
 
   //sources on debouncing:
@@ -78,7 +102,7 @@ class App extends Component {
   }
 
   render() {
-    const { searchTerm, loading, page, totalResults, totalPages, moviesResults } = this.state;
+    const { searchTerm, loading, page, totalResults, totalPages, moviesResults, cutoffPoint } = this.state;
 
     let displayMoviesList = null;
 
@@ -95,6 +119,7 @@ class App extends Component {
           totalPages={totalPages}
           moviesResults={moviesResults}
           loadMoreMovies={this.loadMoreMovies}
+          cutoffPoint={cutoffPoint}
         />
       );
     } else if (moviesResults && moviesResults.length === 0) {

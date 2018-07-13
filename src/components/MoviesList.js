@@ -2,12 +2,15 @@ import React from 'react';
 import Movie from './Movie';
 import MoreMoviesButton from './MoreMoviesButton';
 
-const MoviesList = ({ moviesResults, searchTerm, totalResults, page, totalPages, loadMoreMovies }) => {
+const MoviesList = ({ moviesResults, searchTerm, totalResults, page, totalPages, loadMoreMovies, cutoffPoint }) => {
 
   const movies = moviesResults.map((movie) => {
     return (
       <div key={movie.id}>
-        <Movie movie={movie}/>
+        <Movie
+          movie={movie}
+          cutoffPoint={cutoffPoint}
+        />
         <hr />
       </div>
     );
