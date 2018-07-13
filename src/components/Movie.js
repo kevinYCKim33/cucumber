@@ -1,5 +1,7 @@
 import React from 'react';
 import defaultMoviePic from '../defaultMoviePic.png';
+import MovieDescription from './MovieDescription';
+
 
 const Movie = ({movie}) => {
 
@@ -35,9 +37,9 @@ const Movie = ({movie}) => {
         <div>
           {movie.title} {releaseYear}
         </div>
-        <div>
-          {overview}
-        </div>
+        <MovieDescription
+          description={overview}
+        />
       </div>
     </div>
   );
