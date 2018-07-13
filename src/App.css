@@ -1,4 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Libre+Franklin|Titan+One");
+html {
+  position: relative;
+  min-height: 100%; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #252525;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  overflow: hidden; }
+
+footer a {
+  color: #95a5a6;
+  font-size: 40px;
+  text-decoration: none; }
+
+footer a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: #bdc3c7; }
+
 .App-header {
   background-color: #83aa3e;
   text-align: center;

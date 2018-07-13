@@ -17,9 +17,9 @@ class App extends Component {
             </form>
           </div>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <footer>
+          <a href="https://github.com/kevinYCKim33/cucumber" target="_blank" rel="noopener noreferrer" title="Github"><i className="fa fa-github-square"></i></a>
+        </footer>
       </div>
     );
   }

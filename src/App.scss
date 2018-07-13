@@ -1,6 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Franklin|Titan+One');
 
 $cucumber: #83aa3e;
+$gunmetal-gray: #252525;
+$light-gray: #95a5a6;
+$milk-white: #bdc3c7;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $gunmetal-gray;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  overflow:hidden;
+}
+
+footer a {
+  color: $light-gray;
+  font-size: 40px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: $milk-white;
+}
 
 .App-header {
   background-color: $cucumber;
