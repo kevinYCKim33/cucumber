@@ -5,6 +5,10 @@ $gunmetal-gray: #252525;
 $light-gray: #95a5a6;
 $milk-white: #bdc3c7;
 
+$h1-font-size: 20px;
+$h2-font-size: 16px;
+$p-font-size: 14px;
+
 html {
   position: relative;
   min-height: 100%;
@@ -67,11 +71,27 @@ footer a:hover {
   justify-content: center;
   padding: 0 20px 30px 20px;
   font-family: 'Libre Franklin', sans-serif;
-  // max-width: 767px;
+  h1 {
+    font-size: $h1-font-size;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-size: $h2-font-size;
+  }
+  p {
+    font-size: $p-font-size;
+  }
 }
 
 .filler {
-  // display: flex;
-  // justify-content: center;
   max-width: 767px;
+}
+
+@media all and (max-width: 767px) {
+  .App-body h1 {
+    font-size: $h1-font-size * 0.8;
+  }
 }
