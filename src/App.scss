@@ -61,3 +61,17 @@ footer a:hover {
   border: 2px solid black;
   border-radius: 4px;
 }
+
+.App-body {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 30px 20px;
+  font-family: 'Libre Franklin', sans-serif;
+  // max-width: 767px;
+}
+
+.filler {
+  display: flex;
+  justify-content: center;
+  max-width: 767px;
+}
