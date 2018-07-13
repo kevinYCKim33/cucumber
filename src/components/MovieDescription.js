@@ -10,19 +10,17 @@ class MovieDescription extends Component {
   }
 
   updateWordCutOff = () => {
+    let cutoffPoint;
     if (window.innerWidth <= 450) {
-      this.setState({
-        cutoffPoint: 100
-      });
+      cutoffPoint = 100;
     } else if (window.innerWidth <= 650) {
-      this.setState({
-        cutoffPoint: 250,
-      });
+      cutoffPoint = 250;
     } else {
-      this.setState({
-        cutoffPoint: 350,
-      });
+      cutoffPoint = 350;
     }
+    this.setState({
+      cutoffPoint
+    });
   }
 
   componentDidMount = () => {
